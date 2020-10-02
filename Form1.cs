@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Proslava;
 
-namespace proizvod
+namespace Proslava
 {
     public partial class Form1 : Form
     {
@@ -16,56 +18,46 @@ namespace proizvod
         {
             InitializeComponent();
         }
-        Proizvod p;
+        Proslava[] pr = new Proslava[100];
+        int n = 0;
         private void Form1_Load(object sender, EventArgs e)
         {
-            try
+            
+            
+            StreamReader f = new StreamReader("proslava.txt");
+            while (!f.EndOfStream)
             {
-                Text = "Test aplikacija";
+                    string ime = f.ReadLine();
+                    string prezime = f.ReadLine();
+                    int godine = Convert.ToInt32(f.ReadLine());
+                    string telefon = f.ReadLine();
+                    pr[n] = new Osoba(ime, prezime, godine, telefon);
+                    listBox1.Items.Add(pr[n].Prikaz());
+                    n++;
+            }
+            f.Close();
+            
 
-                p = new Proizvod("Kifla", "Pekara Ljupce");
-                tbProizvod.Text = p.Prikaz();
-                tbProizvod.ReadOnly = true;
-            }
-            catch (Exception izuzetak)
+            for (int i = 0; i < pr.Length; i++)
             {
-                MessageBox.Show(izuzetak.Message);
+                for (int j = i + 1; j < pr.Length; j++)
+                {
+                    if (pr[j].StarijeOd(pr[i]))
+                    {
+                        Proslava pom = pr[i];
+                        pr[i] = pr[j];
+                        pr[j] = pom;
+                    }
+                }
             }
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
+            for (int i = 0; i < pr.Length; i++)
             {
-                double novaCena = Convert.ToDouble(tbNovaCena.Text);
-                p.PromeniCenu(novaCena);
-                tbProizvod.Text = p.Prikaz();
+                if (pr[i] is Osoba)
+                    listBox2.Items.Add("Osoba: " + pr[i].Info());
+               
             }
-            catch (Exception izuzetak)
-            {
-                MessageBox.Show(izuzetak.Message);
-            }
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string naziv = tbNaziv2.Text;
-                string proizvodjac = tbProizvodjac2.Text;
-                double cena = Convert.ToDouble(tbCena2.Text);
-                Proizvod p2 = new Proizvod(naziv, proizvodjac, cena);
-
-                if (p.SkupljiOd(p2))
-                    tbPoruka.Text = "Skuplji je prvi";
-                else if (p2.SkupljiOd(p))
-                    tbPoruka.Text = "Skuplji je drugi";
-                else tbPoruka.Text = "Kostaju isto";
-            }
-            catch (Exception izuzetak)
-            {
-                MessageBox.Show(izuzetak.Message);
-            }
         }
     }
 }

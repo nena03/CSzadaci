@@ -1,4 +1,4 @@
-﻿namespace proizvod
+﻿namespace Proslava
 {
     partial class Form1
     {
@@ -28,109 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbProizvod = new System.Windows.Forms.TextBox();
-            this.tbNovaCena = new System.Windows.Forms.TextBox();
-            this.tbNaziv2 = new System.Windows.Forms.TextBox();
-            this.tbProizvodjac2 = new System.Windows.Forms.TextBox();
-            this.tbCena2 = new System.Windows.Forms.TextBox();
-            this.tbPoruka = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // tbProizvod
+            // listBox1
             // 
-            this.tbProizvod.Location = new System.Drawing.Point(12, 53);
-            this.tbProizvod.Name = "tbProizvod";
-            this.tbProizvod.Size = new System.Drawing.Size(319, 20);
-            this.tbProizvod.TabIndex = 0;
+            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(28, 11);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(289, 420);
+            this.listBox1.TabIndex = 0;
             // 
-            // tbNovaCena
+            // listBox2
             // 
-            this.tbNovaCena.Location = new System.Drawing.Point(21, 113);
-            this.tbNovaCena.Name = "tbNovaCena";
-            this.tbNovaCena.Size = new System.Drawing.Size(100, 20);
-            this.tbNovaCena.TabIndex = 1;
-            // 
-            // tbNaziv2
-            // 
-            this.tbNaziv2.Location = new System.Drawing.Point(21, 180);
-            this.tbNaziv2.Name = "tbNaziv2";
-            this.tbNaziv2.Size = new System.Drawing.Size(100, 20);
-            this.tbNaziv2.TabIndex = 2;
-            // 
-            // tbProizvodjac2
-            // 
-            this.tbProizvodjac2.Location = new System.Drawing.Point(21, 207);
-            this.tbProizvodjac2.Name = "tbProizvodjac2";
-            this.tbProizvodjac2.Size = new System.Drawing.Size(100, 20);
-            this.tbProizvodjac2.TabIndex = 3;
-            // 
-            // tbCena2
-            // 
-            this.tbCena2.Location = new System.Drawing.Point(21, 233);
-            this.tbCena2.Name = "tbCena2";
-            this.tbCena2.Size = new System.Drawing.Size(100, 20);
-            this.tbCena2.TabIndex = 4;
-            // 
-            // tbPoruka
-            // 
-            this.tbPoruka.Location = new System.Drawing.Point(21, 296);
-            this.tbPoruka.Name = "tbPoruka";
-            this.tbPoruka.Size = new System.Drawing.Size(100, 20);
-            this.tbPoruka.TabIndex = 5;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(234, 111);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Promeni";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(256, 279);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(183, 53);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Koji je skuplji prozvod";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(362, 11);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(297, 420);
+            this.listBox2.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.tbPoruka);
-            this.Controls.Add(this.tbCena2);
-            this.Controls.Add(this.tbProizvodjac2);
-            this.Controls.Add(this.tbNaziv2);
-            this.Controls.Add(this.tbNovaCena);
-            this.Controls.Add(this.tbProizvod);
+            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.listBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Proslava";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox tbProizvod;
-        private System.Windows.Forms.TextBox tbNovaCena;
-        private System.Windows.Forms.TextBox tbNaziv2;
-        private System.Windows.Forms.TextBox tbProizvodjac2;
-        private System.Windows.Forms.TextBox tbCena2;
-        private System.Windows.Forms.TextBox tbPoruka;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox2;
     }
 }
 
