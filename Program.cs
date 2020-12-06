@@ -1,22 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace Proslava
+namespace Nasledjivanje
 {
-    static class Program
+    class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            
+            Kuvar kuvar = new Kuvar("Mark", 3, 400);
+           
+            kuvar.IspisStanjaZaposlenog();
+            kuvar.DajIznos(100);
+            kuvar.IspisStanjaZaposlenog();
+
+            Konobar konobar = new Konobar("Milan", 4, 300, 100);
+           
+            konobar.IspisStanjaZaposlenog();
+            konobar.DajIznos(100);
+            konobar.IspisStanjaZaposlenog();
+            
+
+
+            Console.WriteLine("Baksis konobara" + konobar.Baksis);
+
         }
     }
 }
